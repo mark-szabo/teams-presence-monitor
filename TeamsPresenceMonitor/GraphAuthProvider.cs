@@ -21,6 +21,8 @@ namespace TeamsPresenceMonitor
                     .WithAuthority(authority)
                     .WithDefaultRedirectUri()
                     .Build();
+
+            TokenCacheHelper.EnableSerialization(_app.UserTokenCache);
         }
 
         public async Task<AuthenticationResult> GetGraphTokenAsync()
